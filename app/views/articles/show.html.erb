@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<% @article.pictures.each do |picture| %>
+  <%= cl_image_tag(picture.key,
+      width: 400, height: 300, crop: :fill) %>
+<% end %>
+
 <p>
   <strong>Title:</strong>
   <%= @article.title %>
